@@ -11,9 +11,17 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+
+import utils.ExtentReportManager;
+
 public class BaseTest {
 	
 	public WebDriver driver;
+	public ExtentReports report = ExtentReportManager.getReportInstance();
+	public ExtentTest logger;
+
 	
 	/****************** Invoke Browser ***********************/
 	public void invokeBrowser(String browserName) {
