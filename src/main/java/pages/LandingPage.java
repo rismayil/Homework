@@ -6,13 +6,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.aventstack.extentreports.ExtentTest;
+
 import base.BasePage;
 import utils.BrowserUtils;
 public class LandingPage extends BasePage {
 	
 	
-	public LandingPage(WebDriver driver) {
-		super(driver);
+	public LandingPage(WebDriver driver,ExtentTest logger) {
+		super(driver,logger);
 	}
 	
 	@FindBy(name="stockType")

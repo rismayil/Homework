@@ -5,12 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import com.aventstack.extentreports.ExtentTest;
+
 import base.BasePage;
 
 public class SearchResultPage extends BasePage {
 	
-	public SearchResultPage(WebDriver driver) {
-		super(driver);
+	public SearchResultPage(WebDriver driver,ExtentTest logger) {
+		super(driver,logger);
 	}
 	
 	@FindBy(css=".header-primary__title-row .srp-header")
