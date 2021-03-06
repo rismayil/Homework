@@ -16,7 +16,7 @@ public class VerifySearchResultsTest extends BaseTest {
 	SearchResultPage searchResultsPage;
 	
 	
-	@Test
+	@Test(priority=1)
 	public void searchCars() {
 		
 		BasePage basePage = new BasePage(driver,logger);
@@ -27,13 +27,13 @@ public class VerifySearchResultsTest extends BaseTest {
 		
 	}
 	
-	@Test
+	@Test(priority=2)
 	public void verifyNewFilterDisplayedUsedFilterNotDisplayed() {
 		searchResultsPage.verifyNewFilterDisplayedUsedFilterNotDisplayed();
 		
 	}
 	
-	@Test
+	@Test(priority=3)
 	public void touring8PassengerTrimFilterIsDisplayed() {
 		searchResultsPage.touring8PassengerTrimFilterIsDisplayed();
 	}
