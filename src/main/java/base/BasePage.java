@@ -37,7 +37,7 @@ public class BasePage extends BaseTest {
 	/****************** OpenApplication ***********************/
 	public LandingPage OpenApplication() {
 		driver.get("https://www.cars.com/");
-		LandingPage landingPage = new LandingPage(driver);
+		LandingPage landingPage = new LandingPage(driver, logger);
 	    PageFactory.initElements(driver, landingPage);
 		return landingPage;
 	}

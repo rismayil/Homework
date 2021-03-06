@@ -17,10 +17,10 @@ public class VerifySearchResultsTest extends BaseTest {
 	
 	
 	@Test(priority=1)
-	public void searchCars() {
+	public void verifyFiltersDisplayed() {
 		
 		BasePage basePage = new BasePage(driver,logger);
-		basePage.invokeBrowser("Mozila");
+		basePage.invokeBrowser("chrome");
 		landingPage = basePage.OpenApplication();
 		searchResultsPage=landingPage.searchUsedCars();
 		searchResultsPage.verifyFiltersDisplayed();
