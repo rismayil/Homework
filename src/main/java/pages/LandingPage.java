@@ -51,8 +51,8 @@ public class LandingPage extends BasePage {
 		BrowserUtils.selectDropdown(allMakes, "Honda");
 		BrowserUtils.selectDropdown(allModels, "Pilot");
 		BrowserUtils.selectDropdown(price, "$50,000");
-//		if(closeAd.isDisplayed())
-//			closeAd.click();
+		if(closeAd.isDisplayed())
+			closeAd.click();
 		BrowserUtils.selectDropdown(distance, "100 Miles from");
 		zipCode.sendKeys("60008");
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
