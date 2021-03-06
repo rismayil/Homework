@@ -45,7 +45,7 @@ public class BaseTest {
 				driver = new OperaDriver();
 			} else if (browserName.equalsIgnoreCase("IE")) {
 				System.setProperty("webdriver.ie.driver",
-						System.getProperty("user.dir") + "drivers/IEDriverServer.exe");
+						System.getProperty("user.dir") + "/drivers/IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
 			} else {
 				driver = new SafariDriver();

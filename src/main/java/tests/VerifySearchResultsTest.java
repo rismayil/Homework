@@ -8,23 +8,35 @@ import base.BaseTest;
 import pages.LandingPage;
 import pages.SearchResultPage;
 
-public class Test1 extends BaseTest {
+public class VerifySearchResultsTest extends BaseTest {
 	
 	WebDriver driver;
 	
 	LandingPage landingPage;
 	SearchResultPage searchResultsPage;
-	//BasePage basePage = new BasePage(driver);
+	
 	
 	@Test
 	public void searchCars() {
 		
-		BasePage basePage = new BasePage(driver);
+		BasePage basePage = new BasePage(driver,logger);
 		basePage.invokeBrowser("Mozila");
 		landingPage = basePage.OpenApplication();
 		searchResultsPage=landingPage.searchUsedCars();
-		((SearchResultPage) searchResultsPage).verifySearchHeader("Used Honda Pilot for Sale");
+		searchResultsPage.verifyFiltersDisplayed();
 		
 	}
+	
+	@Test
+	public void verifyNewFilterDisplayedUsedFilterNotDisplayed() {
+		searchResultsPage.verifyNewFilterDisplayedUsedFilterNotDisplayed();
+		
+	}
+	
+	@Test
+	public void touring8PassengerTrimFilterIsDisplayed() {
+		searchResultsPage.touring8PassengerTrimFilterIsDisplayed();
+	}
+
 
 }
