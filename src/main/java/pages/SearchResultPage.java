@@ -2,14 +2,18 @@ package pages;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
 
 import base.BasePage;
+import utils.BrowserUtils;
 
 public class SearchResultPage extends BasePage {
 	
@@ -60,6 +64,7 @@ public class SearchResultPage extends BasePage {
 	}
 	
 	public void verifyNewFilterDisplayedUsedFilterNotDisplayed() {
+		BrowserUtils.waitForVisibility(newRadioButton);
 		newRadioButton.click();
 		Assert.assertTrue(newFilter.isDisplayed());
 		Assert.assertFalse(usedFilter.isDisplayed());
