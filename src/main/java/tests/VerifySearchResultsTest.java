@@ -22,8 +22,8 @@ public class VerifySearchResultsTest extends BaseTest {
 		BasePage basePage = new BasePage(driver,logger);
 		basePage.invokeBrowser("chrome");
 		landingPage = basePage.OpenApplication();
-		searchResultsPage=landingPage.searchUsedCars();
-		searchResultsPage.verifyFiltersDisplayed();
+		//searchResultsPage=landingPage.searchUsedCars();
+		//searchResultsPage.verifyFiltersDisplayed();
 		
 	}
 	
