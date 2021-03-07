@@ -2,6 +2,7 @@ package base;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -60,6 +61,34 @@ public class BaseTest {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 	
+	}
+	
+	/***************** Wait Functions in Framework 
+	 * @throws InterruptedException *****************/
+	public void waitForPageLoad() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		int i = 0;
+		while (i != 180) {
+			String pageState = (String) js.executeScript("return document.readyState;");
+			if (pageState.equals("complete")) {
+				break;
+			} else {
+				wait(1);
+			}
+		}
+
+		wait(2);
+
+		i = 0;
+		while (i != 180) {
+			Boolean jsState = (Boolean) js.executeScript("return window.jQuery != undefined && jQuery.active == 0;");
+			if (jsState) {
+				break;
+			} else {
+				wait(1);
+			}
+		}
 	}
 
 }
