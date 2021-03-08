@@ -12,8 +12,11 @@ It additionally does some actions such as select radio buttons, select options, 
 Here are the packages that I created in this project
 
 -base
+
 -pages
+
 -tests
+
 -utils
 
 In the base package I created BasePage and BaseTest classes to add some common functions that will be used by other classes such as invokeBrowser,waitForPageLoad,OpenApplication,getTitle,takeScreenShotOnFailure etc.
@@ -24,5 +27,6 @@ In the utils package I created some useful methods that will be used in other cl
 ## Contact
 
 Rashad Ismayilov - ismayilov.rashad013@gmail.com
-Project Link: https://github.com/rismayil/Homework
+
+Project Link: [Homework] (https://github.com/rismayil/Homework)
  
