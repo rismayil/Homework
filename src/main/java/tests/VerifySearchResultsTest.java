@@ -7,6 +7,7 @@ import base.BasePage;
 import base.BaseTest;
 import pages.LandingPage;
 import pages.SearchResultPage;
+import pages.VehicleDetail;
 
 public class VerifySearchResultsTest extends BaseTest {
 	
@@ -14,6 +15,7 @@ public class VerifySearchResultsTest extends BaseTest {
 	
 	LandingPage landingPage;
 	SearchResultPage searchResultsPage;
+	VehicleDetail vehicleDetail;
 	
 	
 	@Test(priority=1)
@@ -22,8 +24,8 @@ public class VerifySearchResultsTest extends BaseTest {
 		BasePage basePage = new BasePage(driver,logger);
 		basePage.invokeBrowser("chrome");
 		landingPage = basePage.OpenApplication();
-		//searchResultsPage=landingPage.searchUsedCars();
-		//searchResultsPage.verifyFiltersDisplayed();
+		searchResultsPage=landingPage.searchUsedCars();
+		searchResultsPage.verifyFiltersDisplayed();
 		
 	}
 	
@@ -37,6 +39,19 @@ public class VerifySearchResultsTest extends BaseTest {
 	public void touring8PassengerTrimFilterIsDisplayed() {
 		searchResultsPage.touring8PassengerTrimFilterIsDisplayed();
 	}
+	
+	@Test(priority=4)
+	public void verifyTitleOfTheCarAndCheckAvailabilityButtonDisplayed() {
+		SearchResultPage searchResultsPage = new SearchResultPage(driver,logger);
+		vehicleDetail = searchResultsPage.clickOnTheSecondCar();
+		vehicleDetail.verifyTitleOfTheCarAndCheckAvailabilityButton();
+	}
+	
+	@Test(priority=5)
+	public void enterContactInfoAndTakeScreenShot() {
+		vehicleDetail.enterContactInfoAndTakeScreenShot();
+	}
+	
 
 
 }

@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -71,9 +72,16 @@ public class SearchResultPage extends BasePage {
 	}
 	
 	public void touring8PassengerTrimFilterIsDisplayed() {
-		
+		BrowserUtils.waitForVisibility(touring8PassengerTrim);
 		touring8PassengerTrim.click();
 		Assert.assertTrue(touring8PassengerTrimFilter.isDisplayed());
+	}
+	
+	public VehicleDetail clickOnTheSecondCar() {
+		VehicleDetail vehicleDetail = new VehicleDetail(driver,logger);
+		listings.get(1).click();
+		return PageFactory.initElements(driver, VehicleDetail.class);
+		
 	}
 
 

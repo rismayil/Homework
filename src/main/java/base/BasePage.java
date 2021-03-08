@@ -36,17 +36,17 @@ public class BasePage extends BaseTest {
 	
 	/****************** OpenApplication ***********************/
 	public LandingPage OpenApplication() {
-		driver.get("https://www.cars.com/");
+		driver.get("https://www.cars.com/for-sale/searchresults.action/?mdId=21729&mkId=20017&prMx=50000&rd=100&searchSource=QUICK_FORM&zc=60008");
 		LandingPage landingPage = new LandingPage(driver, logger);
 	    PageFactory.initElements(driver, landingPage);
 		return landingPage;
 	}
 	
 	public void getTitle(String expectedTitle) {
-		Assert.assertEquals(driver.getTitle(), expectedTitle);
+		Assert.assertTrue(driver.getTitle().contains(expectedTitle),"Title does not contain expectedTtile");
 	}
 	
-	/****************** Capture Screen Shot ***********************/
+	/****************** Capture Screen Shot on failure ***********************/
 	public void takeScreenShotOnFailure() {
 		TakesScreenshot takeScreenShot = (TakesScreenshot) driver;
 		File sourceFile = takeScreenShot.getScreenshotAs(OutputType.FILE);
