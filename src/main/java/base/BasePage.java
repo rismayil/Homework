@@ -36,7 +36,7 @@ public class BasePage extends BaseTest {
 	
 	/****************** OpenApplication ***********************/
 	public LandingPage OpenApplication() {
-		driver.get("https://www.cars.com/for-sale/searchresults.action/?mdId=21729&mkId=20017&prMx=50000&rd=100&searchSource=QUICK_FORM&zc=60008");
+		driver.get("https://www.cars.com/");
 		LandingPage landingPage = new LandingPage(driver, logger);
 	    PageFactory.initElements(driver, landingPage);
 		return landingPage;

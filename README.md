@@ -27,6 +27,27 @@ In the test package I created a single test class to run all tests
 
 In the utils package I created some useful methods that will be used in other classes in order to avoid code duplications such as selectDropdown,waitForVisibility,scrollDownToElement,takeAScreenshot etc.
 
+##Running Test
+
+*In order to run my project you need to install TestNG plugin in Eclipse via Help/Install New Software
+  * Here is the instruction to install TestNG plugin:
+
+  *Select Help / Install New Software...
+
+  *Enter the update site URL in "Work with:" field:
+
+  *Update site for release: https://dl.bintray.com/testng-team/testng-eclipse-release/
+
+  *Make sure the check box next to URL is checked and click Next.
+
+  *Eclipse will then guide you through the process.
+
+*Clone my project or download and import the project into your IDE
+
+*Go to src\main\java\tests package,right click on VerifySearchResultsTest.java class,select Run as from menu , and then choose TestNG Test.
+
+[For more information about TestNG please click here](https://howtodoinjava.com/testng/testng-tutorial-with-eclipse/)
+
 ## Contact
 
 Rashad Ismayilov - ismayilov.rashad013@gmail.com
